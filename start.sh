@@ -1,12 +1,12 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/Aadhi000/Ajax.git /Ajax
+  git clone https://github.com/henockjoy65/yoonbeta2.git /yoonbeta2
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /Ajax
+  git clone $UPSTREAM_REPO /yoonbeta2
 fi
-cd /Ajax
+cd /yoonbeta2
 pip3 install -U -r requirements.txt
-echo "Starting ᗩᒍᗩ᙭....🔥"
+echo "Starting Yoon Se-ri....🔥"
 python3 bot.py
