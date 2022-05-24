@@ -748,10 +748,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('➕ 𝙰𝚍𝚍 𝚖𝚎 𝚝𝚘 𝚢𝚘𝚞𝚛 𝙶𝚛𝚘𝚞𝚙 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('🔍 𝚂𝚎𝚊𝚛𝚌𝚑 🔎', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('💠 𝔘𝔭𝔡𝔞𝔱𝔢𝔰 💠', url='https://t.me/TeamYoonseri')
+            InlineKeyboardButton('💠 𝚄𝚙𝚍𝚊𝚝𝚎𝚜 💠', url='https://t.me/TeamYoonseri')
             ],[      
-            InlineKeyboardButton('♻️ ℌ𝔢𝔩𝔭 ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ 𝔄𝔟𝔬𝔲𝔱 ♻️', callback_data='about')
+            InlineKeyboardButton('♻️ 𝙷𝚎𝚕𝚙 ♻️', callback_data='help'),
+            InlineKeyboardButton('♻️ 𝙰𝚋𝚘𝚞𝚝 ♻️', callback_data='about')
             ],[
             InlineKeyboardButton('💠 ℭ𝔥𝔞𝔫𝔫𝔢𝔩 💠', url='https://t.me/FT_Channels')
         ]]
