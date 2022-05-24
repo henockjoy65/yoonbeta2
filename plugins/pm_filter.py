@@ -753,7 +753,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('♻️ 𝙷𝚎𝚕𝚙 ♻️', callback_data='help'),
             InlineKeyboardButton('♻️ 𝙰𝚋𝚘𝚞𝚝 ♻️', callback_data='about')
             ],[
-            InlineKeyboardButton('⭐ 𝚁𝚊𝚝𝚎 𝚖𝚎 ⭐', url='https://t.me/FT_Channels')
+            InlineKeyboardButton('⭐ 𝚁𝚊𝚝𝚎 𝚖𝚎 ⭐', url='https://t.me/dailychannelsbot?start=ft_filterbot')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
