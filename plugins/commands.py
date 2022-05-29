@@ -26,7 +26,7 @@ async def start(client, message):
                 InlineKeyboardButton('💠 ℭ𝔥𝔞𝔫𝔫𝔢𝔩 💠', url='https://t.me/FT_Channels')
             ],
             [
-                InlineKeyboardButton('♻️ ℌ𝔢𝔩𝔭 ♻️', url=f"https://t.me/{temp.U_NAME}?start=help")
+                InlineKeyboardButton('♻️ 𝙷𝚎𝚕𝚙 ♻️', url=f"https://t.me/{temp.U_NAME}?start=help")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
