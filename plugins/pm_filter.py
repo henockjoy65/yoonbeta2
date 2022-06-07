@@ -1511,24 +1511,26 @@ async def advantage_spell_chok(msg):
         await asyncio.sleep(8)
         await k.delete()
         return
-    else:
-        if SPELL_CHECK:
-                reply = search.replace(" ", '+')  
-                reply_markup = InlineKeyboardMarkup([[
+    
+    SPELL_CHECK[msg.message_id] = movielist
+    reply = search.replace(" ", '+')
+    reply_markup = InlineKeyboardMarkup([[
                  InlineKeyboardButton("🎗️ Google 🎗️", url=f"https://www.google.com/search?q={reply}")
                  ],[
                  InlineKeyboardButton("🔍IMDB", url=f"https://www.imdb.com/find?q={reply}"),
                  InlineKeyboardButton("Wikipedia🔎", url=f"https://en.m.wikipedia.org/w/index.php?search={reply}")
                  ]]  
-                )    
-                k = await message.reply_text(
-                    text=SET_SPEL_M.format(query=search, mention=message.from_user.mention),
-                    reply_markup=reply_markup                 
                 )
-                await asyncio.sleep(60) 
-                await k.delete()
-                return
-
+    btn = [[
+        InlineKeyboardButton(
+            text=movie.strip(),
+            callback_data=f"spolling#{user}#{k}",
+        )
+    ] for k, movie in enumerate(movielist)]
+    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
+    await msg.reply("I couldn't find anything related to that\nClick the below and copy the name.",
+                    reply_markup=reply_markup))
+    
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
