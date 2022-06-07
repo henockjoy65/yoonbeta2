@@ -1512,7 +1512,7 @@ async def advantage_spell_chok(msg):
         await k.delete()
         return
     else:
-        if SPELL_MODE:
+        if SPELL_CHECK:
                 reply = search.replace(" ", '+')  
                 reply_markup = InlineKeyboardMarkup([[
                  InlineKeyboardButton("🎗️ Google 🎗️", url=f"https://www.google.com/search?q={reply}")
@@ -1521,12 +1521,12 @@ async def advantage_spell_chok(msg):
                  InlineKeyboardButton("Wikipedia🔎", url=f"https://en.m.wikipedia.org/w/index.php?search={reply}")
                  ]]  
                 )    
-                LuciferMoringstar_delete=await message.reply_text(
+                k = await message.reply_text(
                     text=SET_SPEL_M.format(query=search, mention=message.from_user.mention),
                     reply_markup=reply_markup                 
                 )
                 await asyncio.sleep(60) 
-                await LuciferMoringstar_delete.delete()
+                await k.delete()
             return
         if not btn:
             return
