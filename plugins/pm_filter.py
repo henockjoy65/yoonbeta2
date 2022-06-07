@@ -1513,14 +1513,6 @@ async def advantage_spell_chok(msg):
         return
     
     SPELL_CHECK[msg.message_id] = movielist
-    reply = search.replace(" ", '+')
-    reply_markup = InlineKeyboardMarkup([[
-                 InlineKeyboardButton("🎗️ Google 🎗️", url=f"https://www.google.com/search?q={reply}")
-                 ],[
-                 InlineKeyboardButton("🔍IMDB", url=f"https://www.imdb.com/find?q={reply}"),
-                 InlineKeyboardButton("Wikipedia🔎", url=f"https://en.m.wikipedia.org/w/index.php?search={reply}")
-                 ]]  
-                )  
     btn = [[
         InlineKeyboardButton(
             text=movie.strip(),
@@ -1528,8 +1520,8 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nClick below button and copy the oringal name and send it here.",
-                    reply_markup=reply_markup)
+    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+                    reply_markup=InlineKeyboardMarkup(btn))
     
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
